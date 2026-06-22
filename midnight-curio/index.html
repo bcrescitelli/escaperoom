@@ -1,13 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#090b12" />
-    <title>The Midnight Curio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Midnight Curio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="login-screen">
+    <div class="login-box">
+      <h1>The Midnight Curio</h1>
+      <p>Enter your name to join the party.</p>
+      <input type="text" id="player-name" placeholder="Your Name" maxlength="12">
+      <button id="join-btn">Enter the Shop</button>
+    </div>
+  </div>
+
+  <div id="game-canvas" style="display: none;">
+    
+    <div id="cursors-container"></div>
+
+    <div id="room-1" class="room active">
+      <h2>Room 1: The Foyer</h2>
+      <p class="lore">The path forward opens only when the keeper's collection is complete.</p>
+      
+      <div id="desk-slot" class="drop-zone">Desk Slot</div>
+      
+      <div id="lion-figurine" class="draggable hidden">Lion</div>
+      
+      <div id="map-stack" class="draggable">Stack of Maps</div>
+    </div>
+
+    <div id="room-2" class="room hidden">
+      <h2>Room 2: The Gallery of Wonders</h2>
+      <div class="posters">
+        <div class="poster">Constellation of the Five (5)</div>
+        <div class="poster">The Three Moon System (3)</div>
+        <div class="poster">The Eight Spheres (8)</div>
+        <div class="poster">The Nine Rings (9)</div>
+      </div>
+      <div class="keypad-container">
+        <input type="text" id="room2-code" placeholder="Enter 4-Digit Code" maxlength="4">
+        <button id="submit-room2">Unlock</button>
+      </div>
+    </div>
+
+    <div id="room-3" class="room hidden">
+      <h2>Room 3: The Observatory</h2>
+      <p class="lore">"My first is in MYSTERY, but not in HISTORY..."</p>
+      <div class="keypad-container">
+        <input type="text" id="room3-code" placeholder="Enter 5-Letter Word" maxlength="5">
+        <button id="submit-room3">Activate Projector</button>
+      </div>
+    </div>
+
+    <div id="victory-screen" class="room hidden">
+      <h1>Escaped.</h1>
+      <p>The projector activates. The portal stabilizes. You step through into the cool night air.</p>
+    </div>
+
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
 </html>
