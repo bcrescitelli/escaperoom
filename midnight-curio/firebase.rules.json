@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        ".read": true,
+        ".write": true,
+        "players": {
+          "$player": {
+            ".validate": "newData.hasChildren(['name','color']) || newData.val() === null"
+          }
+        }
+      }
+    }
+  }
+}
